@@ -1,0 +1,210 @@
+// Variables
+$no_algos: 6;
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+// Navigation styles
+nav {
+  background-color: #3b3a3a;
+  color: white;
+  display: grid;
+  grid-template-columns: 30% 60%;
+  column-gap: 10%;
+  padding: 0% 5%;
+
+  .array-inputs {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    place-content: center;
+    padding: 5% 0%;
+
+    #a_size,
+    #a_speed {
+      padding: 5% 0%;
+    }
+
+    #a_generate {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 4% 0% 0% 0%;
+      padding-left: 20%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .header_right {
+    display: flex;
+    flex-direction: column;
+
+    .nav-heading {
+      display: inline-block;
+      font-size: xxx-large;
+      padding: 3% 0%;
+    }
+
+    .algos {
+      display: grid;
+      grid-template-columns: repeat($no_algos, 1fr);
+      place-content: center;
+      padding: 2% 0%;
+      gap: 30px;
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        outline: none;
+        padding: 5% 0%;
+        font-size: x-large;
+
+        &:hover {
+          background-color: blue;
+          cursor: pointer;
+        }
+      }
+
+      .button-selection,
+      .button-insertion,
+      .button-merge,
+      .button-quick,
+      .button-heap {
+        margin-right: 25px;
+      }
+
+      .butt_locked {
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+          background-color: transparent;
+          cursor: pointer;
+        }
+      }
+
+      .butt_selected {
+        background-color: white;
+        color: green;
+
+        &:hover {
+          background-color: white;
+          cursor: pointer;
+        }
+      }
+
+      .butt_unselected {
+        &:hover {
+          background-color: blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// Section styles
+section {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+
+  .Complexity_Containers {
+    margin-top: 20%;
+
+    .Pair_Definitions {
+      margin-top: 20%;
+
+      p {
+        display: inline;
+      }
+
+      p.Sub_Heading {
+        font-size: medium;
+        text-transform: none;
+      }
+    }
+  }
+
+  #Info_Cont1,
+  #Info_Cont2 {
+    padding: 20% 10%;
+
+    h3 {
+      text-decoration: underline;
+    }
+  }
+
+  #array_container {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+// Media queries
+@media (max-width: 480px) {
+  nav {
+    grid-template-columns: 100%; // Full width for mobile
+  }
+
+  .array-inputs {
+    grid-template-columns: 100%; // Full width for mobile
+    padding: 10% 5%; // Increased padding for better spacing
+  }
+
+  .array-inputs #a_size,
+  .array-inputs #a_speed {
+    padding: 5% 5%; // Adjusted padding for mobile
+  }
+
+  .header_right .nav-heading {
+    font-size: large; // Adjusted font size for mobile
+    padding: 5% 0%;
+  }
+
+  .header_right .algos {
+    grid-template-columns: 1fr 1fr; // Two buttons per row for mobile
+    gap: 15px; // Reduced gap for mobile
+    padding: 5% 0%;
+  }
+
+  .header_right .algos button {
+    padding: 10% 0%; // Adjusted padding for mobile
+    font-size: large; // Adjusted font size for mobile
+  }
+
+  .Complexity_Containers .Pair_Definitions {
+    margin-top: 10%; // Reduced margin for mobile
+  }
+
+  #Info_Cont1,
+  #Info_Cont2 {
+    padding: 10% 5%; // Adjusted padding for mobile
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1250px) {
+  // Tablet specific styles
+  .header_right .algos {
+    grid-template-columns: repeat(3, 1fr); // Three buttons per row for tablets
+  }
+}
+
+@media (min-width: 1251px) {
+  // Laptop and larger devices styles
+}
